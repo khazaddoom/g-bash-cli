@@ -1,0 +1,32 @@
+{
+  "name": "g-bash-cli",
+  "version": "1.0.0",
+  "description": "g-bash is a test CLI, not for Production use!",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start:windows": "nodemon --watch 'src/**/*.ts' --exec \"npx ts-node\" src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "commander": "^9.4.0",
+    "figlet": "^1.5.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "main": "./lib/index.js",
+  "bin": {
+    "g-bash": "./lib/index.js"
+  }
+}
